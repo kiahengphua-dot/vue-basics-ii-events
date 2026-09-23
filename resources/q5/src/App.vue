@@ -12,7 +12,6 @@ async function refresh(){
   average.value = 0
   temperatureList.value = []
   const response= await axios.get("https://api-open.data.gov.sg/v2/real-time/api/air-temperature")
-  console.log(response)
 
   // Bug 1 fix: correct path — response.data.data (double nesting) and readings[0] (it's an array)
   const newTimestamp = response.data.data.readings[0].timestamp
