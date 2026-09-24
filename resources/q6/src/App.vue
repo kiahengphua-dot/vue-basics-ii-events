@@ -11,6 +11,25 @@ const buttons = [
   'AC', 'BK'
 ];
 // ADD YOUR CODE HERE
+function addinto(input){
+  if (input !== "=" && input !== "AC" && input !== "BK"){
+  expression.value+=input}
+  else if(input === "AC"){
+    expression.value= ""
+  }
+  else if(input ==="BK"){
+    const expresslist = expression.value.split('')
+    expresslist.pop()
+    expression.value = expresslist.join('')}
+  else{
+    calculate(expression.value)
+  }
+  }
+
+  const expressions = ["+","-","x","/"]//how do i priortise the expressions
+  function calculate(input){
+
+  }
 
 
 
@@ -26,8 +45,8 @@ const buttons = [
     <p>{{ expression }}</p>
     <p>{{ answer }}</p>
   </div>
-  <div class="row row-illcols-6 g-2 text-center">
-<button class="btn btn-secondary mx-3 my-2" v-for="button in buttons" :key="button">{{ button }}</button>
+  <div class="row row-cols-6 g-2 text-center">
+<button class="btn btn-secondary mx-3 my-2" v-for="btn in buttons" :key="btn" @click="addinto(btn)">{{ btn }}</button>
 </div>
 </div>
   <!-- ADD YOUR CODE HERE -->
