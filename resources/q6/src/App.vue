@@ -27,10 +27,6 @@ function addinto(input){
   }
 
   const expressions = ["+","-","x","/"]//how do i priortise the expressions
-  function calculate(input){
-
-  }
-
 
 
 
